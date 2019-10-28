@@ -1,0 +1,12 @@
+As a general user, I want to be able to add two numbers together, so I don't have to do it manually.
+
+As a general user, I want to be able to multiply two numbers together, so I don't have to do it manually.
+
+As a general user, I want to be able to divide a number by another number, so I don't have to do it manually.
+
+As a general user, I want to be able to subtract a number from another number, so I don't have to do it manually.
+
+As a general user, I want to do multiple arithmetic operations in a single expression, because it's faster and more
+intuitive than multiple operations seperatly.
+
+As a general user, I want expressions to respect operator precedence, because it's what I'm used to.
