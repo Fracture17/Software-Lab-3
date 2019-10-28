@@ -1,0 +1,19 @@
+Addition
+General User
+User types "2 + 3" into command line.  User presses enter.  Expression is sent to calculator,
+which processes the expression and returns the answer.  "5" is displayed in the command line.
+
+Invalid Expression
+General User
+User enters "3 + 2a" into the command line.  Calculator identifies location of syntax error and returns.
+"Invalid Expression: unrecognized token 'a'" is displayed in the command line.
+
+Multiple Operations
+General User
+The user enters "4 * 2 + 7" into the command line.  Calculator recieves the expression and
+evaluates "4 * 2" then "8 + 7" and returns.  "15" is displayed in the command line.
+
+Operator Precedence
+General User
+The user enters "7 + 4 * 2" into the command line.  Calculator recieves the expression and
+evaluates "4 * 2" then "7 + 8" and returns.  "15" is displayed in the command line.
