@@ -38,6 +38,14 @@ public class LexerTest {
 
     @Test
     public void multipleAddition() {
-        assert false;
+        String exp = "1 + 2 + 3";
+        Token[] tokens = new Token[5];
+        tokens[0] = new Token("1");
+        tokens[1] = new Token("+");
+        tokens[2] = new Token("2");
+        tokens[3] = new Token("+");
+        tokens[4] = new Token("3");
+
+        assertArrayEquals(tokens, lexer.lex(exp).toArray());
     }
 }
