@@ -9,6 +9,10 @@ public class Token {
         return this.data;
     }
 
+    public int size() {
+        return data.length();
+    }
+
     @Override
     public boolean equals(Object obj) {
         Token other = (Token) obj;
