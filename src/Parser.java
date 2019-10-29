@@ -50,6 +50,7 @@ public class Parser {
         return tokens.get(current - 1);
     }
 
+    //implements: addition = multiplication (('+' | '-') multiplication)*
     private Expression addition() {
         Expression expr = multiplication();
 
@@ -69,6 +70,7 @@ public class Parser {
         return expr;
     }
 
+    //implements: multiplication = unary (('*' | '/' | '%') unary)*
     private Expression multiplication() {
         Expression expr = unary();
 
@@ -92,6 +94,7 @@ public class Parser {
         return expr;
     }
 
+    //implements: unary = '-' unary | primary
     private Expression unary() {
         if (match(Token.TokenType.MINUS)) {
             Expression right = unary();
@@ -101,6 +104,7 @@ public class Parser {
         return primary();
     }
 
+    //implements: primary = NUMBER
     private Expression primary() {
         if (match(Token.TokenType.NUMBER)) {
             return new NumberExpression(Double.parseDouble(previous().evaluate()));
