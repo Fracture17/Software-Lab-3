@@ -20,8 +20,7 @@ public class Lexer {
                 }
             }
             if(!matched) {
-                result.add(new Token(string.substring(i, i + 1)));
-                i += 1;
+                throw new RuntimeException("Unexpected character: " + string.substring(i, i+1));
             }
         }
         return result;

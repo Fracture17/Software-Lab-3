@@ -7,22 +7,22 @@ import static org.junit.Assert.*;
 public class ParserTest {
     @Test
     public void basicAddition() {
-        BinaryExpressionEvaluator parser = new BinaryExpressionEvaluator();
+        Parser parser = new Parser();
 
         ArrayList<Token> tokens = new ArrayList<>();
-        tokens.add(new Token("1"));
-        tokens.add(new Token("+"));
-        tokens.add(new Token("2"));
+        tokens.add(new Token("1", Token.TokenType.NUMBER));
+        tokens.add(new Token("+", Token.TokenType.PLUS));
+        tokens.add(new Token("2", Token.TokenType.NUMBER));
 
-        assertEquals(3.0, parser.parse(tokens), .01);
+        assertEquals(3.0, parser.parse(tokens).eval(), .01);
 
         tokens = new ArrayList<>();
-        tokens.add(new Token("7"));
-        tokens.add(new Token("+"));
-        tokens.add(new Token("9"));
-        tokens.add(new Token("+"));
-        tokens.add(new Token("12"));
+        tokens.add(new Token("7", Token.TokenType.NUMBER));
+        tokens.add(new Token("+", Token.TokenType.PLUS));
+        tokens.add(new Token("9", Token.TokenType.NUMBER));
+        tokens.add(new Token("+", Token.TokenType.PLUS));
+        tokens.add(new Token("12", Token.TokenType.NUMBER));
 
-        assertEquals(28.0, parser.parse(tokens), .01);
+        assertEquals(28.0, parser.parse(tokens).eval(), .01);
     }
 }

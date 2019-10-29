@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 public class LexerRule {
     private Pattern pattern;
     private boolean skip = false;
+    protected Token.TokenType type;
 
     public LexerRule(String pattern) {
         this.pattern = Pattern.compile(pattern);
@@ -17,7 +18,7 @@ public class LexerRule {
     public Token match(String expression) {
         Matcher m = pattern.matcher(expression);
         if(m.lookingAt()) {
-            return new Token(m.group(0));
+            return new Token(m.group(0), type);
         }
         return null;
     }
