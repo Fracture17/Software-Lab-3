@@ -1,7 +1,6 @@
 public class DIVIDE extends LexerRule {
     public DIVIDE() {
-        //escape because \ is special in regex
-        super("\\\\");
+        super("/");
         type = Token.TokenType.DIVIDE;
     }
 }
