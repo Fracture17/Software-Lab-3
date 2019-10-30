@@ -5,11 +5,6 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
-        stage('Pull') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Build') {
             steps {
                 sh "mvn clean compile"
