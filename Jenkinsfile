@@ -5,11 +5,19 @@ pipeline {
         jdk 'jdk8'
     }
     stages {
-        stage('Build') {
+        stage('Pull') {
             steps {
                 checkout scm
-                //sh 'ls > files'
+            }
+        }
+        stage('Build') {
+            steps {
                 sh "mvn clean compile"
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn clean test'
             }
         }
     }
