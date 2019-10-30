@@ -22,7 +22,8 @@ public class Lexer {
                 }
             }
             if(!matched) {
-                throw new RuntimeException("Unexpected character: " + string.substring(i, i+1));
+                throw new RuntimeException("Unexpected character: " + string.substring(i, i+1) +
+                        " at index " + Integer.toString(i));
             }
         }
         return result;
